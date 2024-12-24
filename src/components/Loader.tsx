@@ -2,26 +2,29 @@ import React from "react";
 
 const Loader = () => {
   return (
-    <div className="h-screen flex justify-center items-center gap-6">
-      <div className="relative">
-        <div className="w-15 h-15 border-[#afc93f] border-4 border-t-transparent rounded-full animate-spin ">
-          <div
-            className="w-17 h-17 border-[#afc93f] border-4 border-t-transparent rounded-full animate-spin absolute left-0 top-0 "
-            style={{ animationDuration: "1.5s" }}
-          ></div>
-          <div className="relative">
-            <div className="w-19 h-19 border-[#afc93f] border-4 border-t-transparent rounded-full animate-spin absolute left-0 top-0 "></div>
-            <div className="w-21 h-21 border-[#afc93f] border-4 border-t-transparent rounded-full animate-spin absolute left-0 top-0" style={{ animationDuration: "1.5s" }}></div>
-
-          </div>
-          <div className="relative">
-            <div className="w-23 h-23 border-[#afc93f] border-4 border-t-transparent rounded-full animate-spin absolute left-0 top-0"></div>
-          </div>
-          <div className="w-25 h-25 border-[#afc93f] border-4 border-t-transparent rounded-full animate-spin absolute left-0 top-0" style={{ animationDuration: "1.5s" }}></div>
-             
-        </div>
+    <div className="h-screen flex justify-center items-center">
+      {/* Outer Ring */}
+      <div className="relative flex justify-center items-center">
+        {/* Large Spinner */}
+        <div
+          className="w-32 h-32 border-t-4 border-b-4 border-transparent border-t-[#afc93f] rounded-full animate-spin"
+          style={{ animationDuration: "1.5s" }}
+        ></div>
+        {/* Medium Spinner */}
+        <div
+          className="absolute w-24 h-24 border-t-4 border-b-4 border-transparent border-t-[#68a63f] rounded-full animate-spin"
+          style={{ animationDuration: "2s" }}
+        ></div>
+        {/* Small Spinner */}
+        <div
+          className="absolute w-16 h-16 border-t-4 border-b-4 border-transparent border-t-[#4e8035] rounded-full animate-spin"
+          style={{ animationDuration: "2.5s" }}
+        ></div>
+        {/* Glow Effect */}
+        <div className="absolute w-8 h-8 bg-[#c7eb28] rounded-full shadow-lg shadow-[#afc93f]/50"></div>
       </div>
     </div>
   );
 };
+
 export default Loader;

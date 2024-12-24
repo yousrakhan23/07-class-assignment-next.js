@@ -1,7 +1,9 @@
 import React from "react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Pirata_One } from "@next/font/google";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+
+const fontPirata_One = Pirata_One({ subsets: ["latin"], weight: "400" });
 
 // JUST MAKING A RESPONSIVE NAVBAR
 
@@ -23,11 +25,11 @@ const Navbar = () => {
             </svg>
           </SheetTrigger>
           <SheetContent className="w-screen bg-[#afc93f] h-screen flex flex-col justify-center items-center gap-6">
-            <li className="list-none text-[#FFFFFF] hover:text-[#070803]">
-              <Link href="/ServerSideRendering">Server Side Rendering</Link>
+            <li className={`${fontPirata_One.className} text-[#FFFFFF] text-2xl hover:text-[#070803]`}>
+              <Link href="/serverSide-data-fetch">Server Side Rendering</Link>
             </li>
-            <li className="list-none text-[#FFFFFF] hover:text-[#afc93f]">
-              <Link href="/ClientSideRendering">Client Side Rendering</Link>
+            <li className={`${fontPirata_One.className} text-[#FFFFFF] text-2xl hover:text-[#070803]`}>
+              <Link href="/clientSide-data-fetch">Client Side Rendering</Link>
             </li>
           </SheetContent>
         </Sheet>

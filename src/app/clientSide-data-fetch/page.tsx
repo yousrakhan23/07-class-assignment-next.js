@@ -7,3 +7,5 @@ const ClientSideDataFetch = () => {
         </div>
     )
 }
+
+export default ClientSideDataFetch;

@@ -1,9 +1,7 @@
 "use client";
-import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Pirata_One } from "@next/font/google";
-import { Loader } from "lucide-react";
+import Loader from "@/components/Loader";
 
 const fontPirata_One = Pirata_One({ subsets: ["latin"], weight: "400" });
 
@@ -20,7 +18,7 @@ export interface IClientSideRendering {
   };
 }
 
-export default async function ClientSideRendering() {
+export default function ClientSideRendering() {
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState<IClientSideRendering[]>([]);
 
@@ -37,22 +35,24 @@ export default async function ClientSideRendering() {
         setLoading(false);
       }
     };
+
     fetchData();
   }, []);
 
-  if (loading)
+  if (loading) {
     return (
       <div>
         <Loader />
       </div>
     );
+  }
 
   return (
-    <div className=" min-h-screen bg-white py-8">
+    <div className="min-h-screen py-8">
       <h1
-        className={`${fontPirata_One.className} motion-safe:animate-bounce uppercase text-center text-[#afc93f] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-5xl`}
+        className={`${fontPirata_One.className} m-9 motion-safe:animate-bounce uppercase text-center text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-5xl`}
       >
-        Products list
+        Products List
       </h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:px-6 px-7">
@@ -63,20 +63,20 @@ export default async function ClientSideRendering() {
           return (
             <div
               key={id}
-              className="border hover:animate-spin rounded-lg p-4 shadow-md flex flex-col items-center"
+              className="border rounded-full p-4 shadow-md flex flex-col items-center border-e-8 hover:border-[#afc93f]"
             >
               <img
                 src={image}
                 alt={name}
                 className="w-40 h-40 object-cover mb-2"
               />
-              <h2 className="text-lg font-bold text-center">{name}</h2>
-              <p className="text-sm mt-4 text-gray-600 mb-2">{description}</p>
-              <div className="flex flex-col items-center">
-                <span className="text-gray-600 mb-2">Category: {category}</span>
-                <span className="text-gray-600 mb-2">Price: ${price}</span>
+              <h2 className="text-sm font-bold text-center">{name}</h2>
+              <p className="text-[9px] mt-4 text-gray-600 ">{description}</p>
+              <div className="flex flex-col items-center mt-4">
+                <span className="text-gray-600 text-sm">Category: {category}</span>
+                <span className="text-gray-600 text-sm">Price: ${price}</span>
               </div>
-              <p className="text-gray-600 mb-2">Rating: {rating.rate}</p>
+              <p className="text-gray-600 text-sm">Rating: {rating.rate}</p>
             </div>
           );
         })}

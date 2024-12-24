@@ -6,7 +6,7 @@ body {
   background-color: black;
 }
 
-@layer utilities {
+/* @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
@@ -75,4 +75,4 @@ body {
   body {
     @apply bg-background text-foreground;
   }
-}
+} */
