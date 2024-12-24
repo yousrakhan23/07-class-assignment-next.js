@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
 import { Pirata_One } from "@next/font/google";
 import Loader from "@/components/Loader";
 
@@ -66,10 +65,11 @@ export default function ClientSideRendering() {
               key={id}
               className="border rounded-full p-4 shadow-md flex flex-col items-center border-e-8 hover:border-[#afc93f]"
             >
-              <Image
+              <img
                 src={image}
                 alt={name}
                 className="w-40 h-40 object-cover mb-2"
+                
               />
               <h2 className="text-sm font-bold text-center">{name}</h2>
               <p className="text-[9px] mt-4 text-gray-600 ">{description}</p>
