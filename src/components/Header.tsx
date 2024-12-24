@@ -9,6 +9,7 @@ const Header = () => {
       <h1 className=" motion-safe:animate-pulse text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
         Data Fetching Assignment
       </h1>
+      
     </div>
   );
 };
