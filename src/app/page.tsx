@@ -7,10 +7,12 @@ const fontPirata_One = Pirata_One({ subsets: ["latin"], weight: "400" });
 
 const HomePage = () => {
   return (
-    <div className="h-screen flex justify-center items-center">
+    <div className="h-[80vh] flex justify-center items-center">
       <div className="w-full max-w-lg py-6 px-8 shadow-lg rounded-lg">
         <div className="text-center">
-          <h1 className={`${fontPirata_One.className} text-[#586617] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-6xl`}>
+          <h1
+            className={`${fontPirata_One.className} text-[#586617] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-6xl`}
+          >
             Client Side Rendering (CSR) and Server Side Rendering (SSR)
           </h1>
         </div>
